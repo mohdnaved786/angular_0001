@@ -1,0 +1,22 @@
+<button class="theme-toggle" (click)="toggleDarkMode()">
+    {{ isDarkMode ? '🌙 Dark Mode' : '☀️ Light Mode' }}
+  </button>
+  
+
+<div class="dashboard-container" style="margin-top: 5em;">
+    <h1 class="title">🧠 Choose Your Quiz Category</h1>
+  
+    <div class="quiz-grid">
+      <div
+        class="quiz-card"
+        *ngFor="let quiz of quizzes"
+        (click)="startQuiz(quiz.key)"
+      >
+        <div class="icon">{{ quiz.icon }}</div>
+        <h2>{{ quiz.title }}</h2>
+        <p>{{ quiz.description }}</p>
+        <span class="badge" [ngClass]="quiz.level">{{ quiz.level }}</span>
+      </div>
+    </div>
+  </div>
+  

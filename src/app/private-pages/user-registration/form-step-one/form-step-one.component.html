@@ -1,0 +1,71 @@
+<form [formGroup]="form" class="voice-form">
+  <div class="form-group">
+    <label>Name:</label>
+    <div class="input-wrapper">
+      <input type="text" formControlName="name" />
+      <button
+        type="button"
+        [class.mic-active]="activeField === 'name'"
+        (click)="startVoiceInput('name')"
+      >
+        🎤
+      </button>
+    </div>
+    <span *ngIf="form.controls['name']?.invalid && form.controls['name'].touched" style="color: red;">This field is required!</span>
+  </div>
+
+  <div class="form-group">
+    <label>Email:</label>
+    <div class="input-wrapper">
+      <input type="text" formControlName="email" />
+      <button
+        type="button"
+        [class.mic-active]="activeField === 'email'"
+        (click)="startVoiceInput('email')"
+      >
+        🎤
+      </button>
+    </div>
+    <span *ngIf="form.controls['email']?.invalid && form.controls['email'].touched" style="color: red;">This field is required!</span>
+  </div>
+
+  <div class="form-group">
+    <label>Mobile:</label>
+    <div class="input-wrapper">
+      <input type="text" formControlName="mobile" />
+      <button
+        type="button"
+        [class.mic-active]="activeField === 'mobile'"
+        (click)="startVoiceInput('mobile')"
+      >
+        🎤
+      </button>
+    </div>
+    <span *ngIf="form.controls['mobile']?.invalid && form.controls['mobile'].touched" style="color: red;">This field is required!</span>
+  </div>
+
+  <div class="form-group">
+    <label>Address:</label>
+    <div class="input-wrapper">
+      <input type="text" formControlName="address" />
+      <button
+        type="button"
+        [class.mic-active]="activeField === 'address'"
+        (click)="startVoiceInput('address')"
+      >
+        🎤
+      </button>
+    </div>
+    <span *ngIf="form.controls['address']?.invalid && form.controls['address'].touched" style="color: red;">This field is required!</span>
+  </div>
+
+  <div *ngIf="activeField" class="recording-indicator">
+    🎙️ Listening to {{ activeField }}...
+  </div>
+  <div class="form-actions">
+    <button type="submit" (click)="submitForm(form)" [disabled]="form.invalid" class="submit-btn">
+      🚀 Submit
+    </button>
+  </div>
+  
+</form>

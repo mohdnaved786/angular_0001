@@ -1,0 +1,9 @@
+<div>
+    <label for="voiceSelect">Choose Voice:</label>
+    <select id="voiceSelect" [(ngModel)]="selectedVoiceName" (change)="onVoiceChange()">
+      <option *ngFor="let voice of voices" [value]="voice.name">
+        {{ voice.name }} ({{ voice.lang }})
+      </option>
+    </select>
+  </div>
+  
