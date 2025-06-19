@@ -11,6 +11,9 @@
         🎤
       </button>
     </div>
+   <div class="mt-3">
+    <i class="bi bi-mic-fill" (click)="textToSpeech(this.form.get('name')?.value)"></i>
+   </div>
     <span *ngIf="form.controls['name']?.invalid && form.controls['name'].touched" style="color: red;">This field is required!</span>
   </div>
 
@@ -26,6 +29,9 @@
         🎤
       </button>
     </div>
+    <div class="mt-3">
+      <i class="bi bi-mic-fill" (click)="textToSpeech(this.form.get('email')?.value)"></i>
+     </div>
     <span *ngIf="form.controls['email']?.invalid && form.controls['email'].touched" style="color: red;">This field is required!</span>
   </div>
 
@@ -41,6 +47,9 @@
         🎤
       </button>
     </div>
+    <div class="mt-3">
+      <i class="bi bi-mic-fill" (click)="textToSpeech(this.form.get('mobile')?.value)"></i>
+     </div>
     <span *ngIf="form.controls['mobile']?.invalid && form.controls['mobile'].touched" style="color: red;">This field is required!</span>
   </div>
 
@@ -56,6 +65,9 @@
         🎤
       </button>
     </div>
+    <div class="mt-3">
+      <i class="bi bi-mic-fill" (click)="textToSpeech(this.form.get('address')?.value)"></i>
+     </div>
     <span *ngIf="form.controls['address']?.invalid && form.controls['address'].touched" style="color: red;">This field is required!</span>
   </div>
 

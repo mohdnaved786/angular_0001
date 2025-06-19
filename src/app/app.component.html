@@ -17,15 +17,27 @@
       </defs>
       <g fill="none" stroke-linecap="round" stroke-width="16">
         <g class="ip__track" stroke="#ddd">
-          <path d="M8,64s0-56,60-56,60,112,120,112,60-56,60-56"/>
-          <path d="M248,64s0-56-60-56-60,112-120,112S8,64,8,64"/>
+          <path d="M8,64s0-56,60-56,60,112,120,112,60-56,60-56" />
+          <path d="M248,64s0-56-60-56-60,112-120,112S8,64,8,64" />
         </g>
         <g stroke-dasharray="180 656">
-          <path class="ip__worm1" stroke="url(#grad1)" stroke-dashoffset="0" d="M8,64s0-56,60-56,60,112,120,112,60-56,60-56"/>
-          <path class="ip__worm2" stroke="url(#grad2)" stroke-dashoffset="358" d="M248,64s0-56-60-56-60,112-120,112S8,64,8,64"/>
+          <path class="ip__worm1" stroke="url(#grad1)" stroke-dashoffset="0"
+            d="M8,64s0-56,60-56,60,112,120,112,60-56,60-56" />
+          <path class="ip__worm2" stroke="url(#grad2)" stroke-dashoffset="358"
+            d="M248,64s0-56-60-56-60,112-120,112S8,64,8,64" />
         </g>
       </g>
     </svg>
   </main>
 </div>
 <router-outlet></router-outlet>
+
+
+<div *ngIf="user; else showLogin">
+  <h2>Welcome, {{ user.displayName }}</h2>
+  <img [src]="user.photoURL" width="50">
+  <button (click)="logout()">Logout</button>
+</div>
+<ng-template #showLogin>
+  <button (click)="login()">Login with Google</button>
+</ng-template>
